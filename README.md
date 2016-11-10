@@ -1,5 +1,6 @@
 # hexo-reference
-[![npm version](https://img.shields.io/npm/v/hexo-reference.svg?)](https://www.npmjs.com/package/hexo-reference) [![npm dependencies](https://img.shields.io/david/quentin-chen/hexo-reference.svg?)](https://david-dm.org/quentin-chen/hexo-reference#info=dependencies&view=table) [![npm dev dependencies](https://img.shields.io/david/dev/quentin-chen/hexo-reference.svg?)](https://david-dm.org/quentin-chen/hexo-reference#info=devDependencies&view=table) [![travis build status](https://img.shields.io/travis/quentin-chen/hexo-reference/master.svg?)](https://travis-ci.org/quentin-chen/hexo-reference) 
+[![npm version](https://img.shields.io/npm/v/hexo-reference.svg?)](https://www.npmjs.com/package/hexo-reference) [![npm dependencies](https://img.shields.io/david/quentin-chen/hexo-reference.svg?)](https://david-dm.org/quentin-chen/hexo-reference#info=dependencies&view=table) [![npm dev dependencies](https://img.shields.io/david/dev/quentin-chen/hexo-reference.svg?)](https://david-dm.org/quentin-chen/hexo-reference#info=devDependencies&view=table) [![travis build status](https://img.shields.io/travis/quentin-chen/hexo-reference/master.svg?)](https://travis-ci.org/quentin-chen/hexo-reference)
+
 A plugin to support markdown footnotes and Wiki-Style tooltip reference in your Hexo blog posts.
 
 ## Installation
