@@ -30,7 +30,7 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
-    "markdown-it": "^7.0.0",
-    "hexo-util": "^0.1.7"
+    "markdown-it": "^8.1.0",
+    "hexo-util": "^0.6.0"
   }
 }
