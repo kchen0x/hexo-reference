@@ -1,0 +1,36 @@
+{
+  "name": "hexo-reference",
+  "version": "1.0.0",
+  "description": "A plugin to support markdown footnotes and Wiki-Style tooltip reference in your Hexo blog posts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quentin-chen/hexo-reference.git"
+  },
+  "keywords": [
+    "hexo",
+    "plugin",
+    "footnote",
+    "footnotes",
+    "reference",
+    "tooltip"
+  ],
+  "author": "Quentin Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quentin-chen/hexo-reference/issues"
+  },
+  "homepage": "https://github.com/quentin-chen/hexo-reference#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint-config-google": "^0.6.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "markdown-it": "^7.0.0",
+    "hexo-util": "^0.1.7"
+  }
+}
