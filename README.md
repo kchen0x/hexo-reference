@@ -33,5 +33,7 @@ content
 [^4]: footnote content with some [markdown](https://en.wikipedia.org/wiki/Markdown)
 ```
 
+See [Demo](http://kchen.cc/2016/11/10/footnotes-in-hexo/) here.
+
 ### Output
-![footnotes](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/59299214d0a7f557c7a55fdc2c7e172f.png-960.jpg)
+![footnotes](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/71e694ce6f0052b83f7af81cfa7ccc64.png-1920.jpg)
