@@ -55,7 +55,7 @@ function renderFootnotes(text) {
             var tooltip = indexMap[index].content;
             return '<sup id="fnref:' + index + '">' +
                 '<a href="#fn:'+ index +'" rel="footnote">' +
-                '<span class="hint--top-right hint--error hint--large" aria-label="'
+                '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="'
                 + tooltip +
                 '">[' + index +']</span></a></sup>';
         });
