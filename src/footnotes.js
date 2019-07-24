@@ -12,53 +12,82 @@ var md = require('markdown-it')({
  */
 function renderFootnotes(text) {
     var footnotes = [];
-    var reFootnoteContent = /\[\^(\d+)\]: ?([\S\s]+?)(?=\[\^(?:\d+)\]|\n\n|$)/g;
-    var reInlineFootnote = /\[\^(\d+)\]\((.+?)\)/g;
+    var reFootnoteContent = /\[\^(\w+)\]: ?([\S\s]+?)(?=\[\^(?:\d+)\]|\n\n|$)/g;
+    var reInlineFootnote = /\[\^(\w+)\]\((.+?)\)/g;
+    var reAliasFootnote = /\[\^(\w+)\]/g;
     var reFootnoteIndex = /\[\^(\d+)\]/g;
+
     var html = '';
-
-    // threat all inline footnotes
-    text = text.replace(reInlineFootnote, function (match, index, content) {
-        footnotes.push({
-            index: index,
-            content: content
-        });
-        // remove content of inline footnote
-        return '[^' + index + ']';
-    });
-
-    // threat all footnote contents
-    text = text.replace(reFootnoteContent, function (match, index, content) {
-        footnotes.push({
-            index: index,
-            content: content
-        });
-        // remove footnote content
-        return '';
-    });
+    var global_index = 0;
 
     // create map for looking footnotes array
     function createLookMap(field) {
         var map = {}
         for (var i = 0; i < footnotes.length; i++) {
             var item = footnotes[i]
-            var key = item[field]
-            map[key] = item
+            if (field in item) {
+                var key = item[field]
+                map[key] = item
+            }
         }
         return map
     }
+
+    // firstly collect and clear all footnote contents
+    text = text.replace(reFootnoteContent, function (match, alias, content) {
+        footnotes.push({
+            alias: alias,
+            content: content
+        });
+        // remove footnote content
+        return '';
+    });
+
+    // loop all inline footnotes, convert to alias style
+    text = text.replace(reInlineFootnote, function (match, alias, content) {
+        footnotes.push({
+            alias: alias,
+            content: content
+        });
+        // remove content of inline footnote, return as footnote index
+        return '[^' + alias + ']';
+    });
+
+    var aliasMap = createLookMap("alias")
+
+    // loop all alias footnotes, update and leave index
+    text = text.replace(reAliasFootnote, function (match, alias) {
+        if (aliasMap.hasOwnProperty(alias)) {
+            aliasMap[alias].index = ++global_index;
+        }
+        // return as footnote index
+        return '[^' + global_index + ']';
+    });
+
     var indexMap = createLookMap("index")
 
     // render (HTML) footnotes reference
     text = text.replace(reFootnoteIndex,
         function(match, index){
+            if (!indexMap.hasOwnProperty(index) || !indexMap[index].hasOwnProperty("content")) {
+                return ''
+            }
+
             var tooltip = indexMap[index].content;
             return '<sup id="fnref:' + index + '">' +
                 '<a href="#fn:'+ index +'" rel="footnote">' +
                 '<span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="'
                 + tooltip +
                 '">[' + index +']</span></a></sup>';
-        });
+    });
+
+    // delete the footnotes that only has footnote-detail but no mark in text (no index).
+    var i = footnotes.length;
+    while(i--) {
+        if (!footnotes[i].hasOwnProperty("index")) {
+            footnotes.splice(i, 1)
+        }
+    }
 
     // sort footnotes by their index
     footnotes.sort(function (a, b) {
