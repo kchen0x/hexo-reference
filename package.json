@@ -1,7 +1,7 @@
 {
-  "name": "hexo-reference",
-  "version": "1.0.4",
-  "description": "A plugin to support markdown footnotes and Wiki-Style tooltip reference in your Hexo blog posts.",
+  "name": "hexo-reference-new",
+  "version": "1.0.6",
+  "description": "Newer, Faster. A plugin to support markdown footnotes and Wiki-Style tooltip reference in your Hexo blog posts.",
   "main": "index.js",
   "scripts": {
     "mocha": "./node_modules/.bin/mocha -u bdd",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kchen0x/hexo-reference.git"
+    "url": "https://github.com/AllenGo912/hexo-reference-new.git"
   },
   "keywords": [
     "hexo",
@@ -19,12 +19,12 @@
     "reference",
     "tooltip"
   ],
-  "author": "Kun Chen",
+  "author": "xiongziq",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kchen0x/hexo-reference/issues"
+    "url": "https://github.com/AllenGo912/hexo-reference-new/issues"
   },
-  "homepage": "https://github.com/kchen0x/hexo-reference#readme",
+  "homepage": "https://github.com/AllenGo912/hexo-reference-new#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.14",
