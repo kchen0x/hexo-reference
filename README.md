@@ -1,13 +1,6 @@
-# hexo-reference-new
+# hexo-reference
 
 A plugin to support markdown footnotes and Wiki-Style tooltip reference in your Hexo blog posts.
-
-Base on [hexo-reference](https://github.com/kchen0x/hexo-reference)
-
-致敬原作者 [kchen0x](https://github.com/kchen0x)
-
-使用该插件的时候发现我的hexo页面经常打开很慢，经排查是因为 `hexo-reference` 中引用的 `hint.css` 的 CDN 速度过慢，应该是版本过老的原因，折腾了一番，发现作者已停更，暂未想出一个更好的方法，因此修改了新的CDN发布到npmjs上。
-
 
 ## Installation
 
