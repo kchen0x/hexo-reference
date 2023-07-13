@@ -5,7 +5,7 @@ A plugin to support markdown footnotes and Wiki-Style tooltip reference in your 
 ## Installation
 
 ```
-npm install hexo-reference-new --save
+npm install hexo-reference --save
 ```
 
 If Hexo detect automatically all plugins, that's all.  
@@ -13,7 +13,7 @@ If Hexo detect automatically all plugins, that's all.
 If that is not the case, register the plugin in your `_config.yml` file :
 ```
 plugins:
-  - hexo-reference-new
+  - hexo-reference
 ```
 
 ## Syntax
