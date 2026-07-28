@@ -4,34 +4,44 @@ A plugin to support markdown footnotes and Wiki-Style tooltip reference in your 
 
 ## Installation
 
-```
+Node.js 18 or newer is required.
+
+```sh
 npm install hexo-reference --save
 ```
 
-If Hexo detect automatically all plugins, that's all.  
+Hexo normally detects installed plugins automatically.
 
-If that is not the case, register the plugin in your `_config.yml` file :
-```
+If automatic plugin detection is disabled, add the package to the `plugins`
+list in `_config.yml`:
+
+```yaml
 plugins:
   - hexo-reference
 ```
 
 ## Syntax
 
-### Mardown
-```
+### Markdown
+
+```markdown
 basic footnote[^1]
 here is an inline footnote[^2](inline footnote)
-and another one[^3]
-and another one[^4]
+named references work too[^details]
+the same footnote can be referenced again[^1]
 
 [^1]: basic footnote content
-[^3]: paragraph
+[^details]: paragraph
 footnote
 content
-[^4]: footnote content with some [markdown](https://en.wikipedia.org/wiki/Markdown)
 ```
 
+Footnote definitions must start on their own line. Footnotes are numbered by
+the order of their first reference, regardless of the definition label.
+
+Markdown in a footnote is rendered in the footnote list and converted to plain
+text in the tooltip.
 
 ### Output
+
 ![footnotes](http://rw920d1od.hd-bkt.clouddn.com/hexo/footnote.png)
